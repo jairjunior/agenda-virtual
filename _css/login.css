@@ -29,11 +29,6 @@ body, html {
       max-width: 430px;
   }
 }
-@media (min-width: 992px) {
-  .box-login {
-      max-width: 600px;
-  }
-}
 #login-title {
 	margin-top: 0px;
 	margin-bottom: 40px;
