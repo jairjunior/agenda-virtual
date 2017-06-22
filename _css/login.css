@@ -1,0 +1,46 @@
+body, html {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
+}
+.outer {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+.box-login {
+	background-color: #FAFAFA;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 310px;
+	padding: 40px 20px;
+	border: 1px solid #FCFCFC;
+	border-radius: 4px;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+@media (min-width: 768px) {
+  .box-login {
+      max-width: 430px;
+  }
+}
+@media (min-width: 992px) {
+  .box-login {
+      max-width: 600px;
+  }
+}
+#login-title {
+	margin-top: 0px;
+	margin-bottom: 40px;
+}
+#inputEmail, #inputPassword {
+	height: 3em;
+}
+#forget-password {
+	margin-top: 10px;
+}
