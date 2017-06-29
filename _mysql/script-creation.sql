@@ -15,27 +15,29 @@ CREATE SCHEMA IF NOT EXISTS `agenda_virtual` DEFAULT CHARACTER SET utf8 ;
 USE `agenda_virtual` ;
 
 -- -----------------------------------------------------
--- Table `agenda_virtual`.`usuario`
+-- Table `agenda_virtual`.`usuarios`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `agenda_virtual`.`usuario` (
-  `idusuario` INT NOT NULL,
-  `nome` VARCHAR(50) NOT NULL,
+CREATE TABLE IF NOT EXISTS `agenda_virtual`.`usuarios` (
+  `idusuario` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(30) NOT NULL,
   `sobrenome` VARCHAR(100) NOT NULL,
   `email` VARCHAR(100) NOT NULL,
-  `senha` VARCHAR(200) NOT NULL,
-  `admin` INT NOT NULL,
+  `senha` VARCHAR(100) NOT NULL,
+  `admin` INT UNSIGNED NOT NULL,
+  `criacao` DATETIME NOT NULL,
+  `modificacao` DATETIME NOT NULL,
   PRIMARY KEY (`idusuario`))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `agenda_virtual`.`contato`
+-- Table `agenda_virtual`.`contatos`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `agenda_virtual`.`contato` (
-  `idcontato` INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `agenda_virtual`.`contatos` (
+  `idcontato` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `tratamento` VARCHAR(20) NULL,
   `nome` VARCHAR(50) NOT NULL,
-  `sobrenome` VARCHAR(100) NOT NULL,
+  `sobrenome` VARCHAR(100) NULL,
   `apelido` VARCHAR(45) NULL,
   `telefone1` VARCHAR(45) NULL,
   `tipo_telefone1` VARCHAR(45) NULL,
@@ -52,14 +54,16 @@ CREATE TABLE IF NOT EXISTS `agenda_virtual`.`contato` (
   `endereco` VARCHAR(200) NULL,
   `webpage` VARCHAR(100) NULL,
   `nota` VARCHAR(45) NULL,
-  `idusuario` INT NOT NULL,
+  `criacao` DATETIME NOT NULL,
+  `modificacao` DATETIME NOT NULL,
+  `idusuario` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`idcontato`, `idusuario`),
-  INDEX `fk_contato_usuario_idx` (`idusuario` ASC),
-  CONSTRAINT `fk_contato_usuario`
+  INDEX `fk_contatos_usuarios_idx` (`idusuario` ASC),
+  CONSTRAINT `fk_contatos_usuarios`
     FOREIGN KEY (`idusuario`)
-    REFERENCES `agenda_virtual`.`usuario` (`idusuario`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    REFERENCES `agenda_virtual`.`usuarios` (`idusuario`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
