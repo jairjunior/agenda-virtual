@@ -39,6 +39,22 @@
 		<h1 class="text-center" id="login-title">Login</h1>
 
 		<form role="form" method="post" action="../_controllers/LoginController.php">
+			
+			<!-- Verifica a existência de erro no processo de Login -->
+			<?php if( isset($_GET["error"]) && $_GET["error"] == "LOGIN_ERROR" ){ ?>
+				<div class="alert alert-danger" role="alert">
+					<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+					<span class="sr-only">Erro:</span>
+					Usuário e/ou senha inválidos!
+				</div>
+			<?php }else if( isset($_GET["error"]) && $_GET["error"] == "LOGIN_NEEDED" ){ ?>
+				<div class="alert alert-danger" role="alert">
+					<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+					<span class="sr-only">Erro:</span>
+					Efetue o login!
+				</div>
+			<?php } ?>
+
 			<!-- Email Field -->
 			<div class="form-group">
 				<label for="inputEmail" class="sr-only">E-mail:</label>

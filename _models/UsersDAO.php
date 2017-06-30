@@ -37,7 +37,7 @@ class UsersDAO implements InterfaceCRUD{
 
 		$listOfUsers = array();
 		
-		while($row = $result->fetch_array(MYSQLI_ASSOC) ){
+		while( $row = $result->fetch_array(MYSQLI_ASSOC) ){
 			$user = new UserVO();
 			$user->setIdUser( $row["idUser"] );
 			$user->setName( $row["name"] );
@@ -65,11 +65,36 @@ class UsersDAO implements InterfaceCRUD{
 
 	/*======================================================================
 	 *
-	 * Método que exclui uma linha da tabela
+	 * Método que exclui uma linha da tabela.
 	 *
 	 *=====================================================================*/
 	public function delete($id){
 
+	}
+
+	/*======================================================================
+	 *
+	 * Método que procura usuário na tabela pelo e-mail.
+	 * Pressupõe-se que há apenas uma única entrada na tabela com aquele e-mail.
+	 *
+	 *=====================================================================*/
+	public function searchByEmail($email){
+		$result = $this->mysqli->query("SELECT * FROM users WHERE email = '".$email."'");
+
+		$user = null;
+
+		if( $row = $result->fetch_array(MYSQLI_ASSOC) ){
+			$user = new UserVO();
+			$user->setIdUser( $row["idUser"] );
+			$user->setName( $row["name"] );
+			$user->setLastName( $row["lastName"] );
+			$user->setEmail( $row["email"] );
+			$user->setPassword( $row["password"] );
+			$user->setAdmin( $row["admin"] );
+			$user->setCreation( $row["creation"] );
+			$user->setModified( $row["modified"] );
+		}
+		return $user;
 	}
 
 }
