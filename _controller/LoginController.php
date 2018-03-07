@@ -1,7 +1,7 @@
 <?php
 	session_start();
-	require_once("../_models/ConnectToDatabase.php");
-	require_once("../_models/UsersDAO.php");
+	require_once("../_model/ConnectToDatabase.php");
+	require_once("../_model/UsersDAO.php");
 
 
 	if( isset($_POST["email"]) && isset($_POST["password"]) ){
@@ -21,21 +21,21 @@
 				$_SESSION["loggedUserEmail"] = $user->getEmail();
 				$_SESSION["loggedUserPermission"] = $user->getAdmin();
 
-				header('Location: ../_views/agenda.php');
+				header('Location: ../_view/agenda.php');
 			}
 			else {
-				header('Location: ../_views/login.php?error=LOGIN_ERROR');
+				header('Location: ../_view/login.php?error=LOGIN_ERROR');
 			}
 		}
 
 		else {
-			header('Location: ../_views/login.php?error=LOGIN_ERROR');
+			header('Location: ../_view/login.php?error=LOGIN_ERROR');
 		}
 
 	}
 
 	else {
-		header('Location: ../_views/login.php?error=LOGIN_NEEDED');
+		header('Location: ../_view/login.php?error=LOGIN_NEEDED');
 	}
 
 ?>

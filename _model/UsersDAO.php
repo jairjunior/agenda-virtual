@@ -1,10 +1,10 @@
 <?php
 include_once 'ConnectToDatabase.php';
 include_once 'UserVO.php';
-include_once 'InterfaceCRUD.php';
+include_once 'InterfaceCrudDAO.php';
 
 
-class UsersDAO implements InterfaceCRUD{
+class UsersDAO implements InterfaceCrudDAO{
 
  private $mysqli = null;
 

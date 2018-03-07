@@ -38,7 +38,7 @@
 
 		<h1 class="text-center" id="login-title">Login</h1>
 
-		<form role="form" method="post" action="../_controllers/LoginController.php">
+		<form role="form" method="post" action="../_controller/LoginController.php">
 			
 			<!-- Verifica a existência de erro no processo de Login -->
 			<?php if( isset($_GET["error"]) && $_GET["error"] == "LOGIN_ERROR" ){ ?>
