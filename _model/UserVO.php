@@ -6,6 +6,7 @@ final class UserVO{
 	private $lastName;
 	private $email;
 	private $password;
+	private $photo;
 	private $admin;
 	private $creation;
 	private $modified;
@@ -53,6 +54,15 @@ final class UserVO{
 
 	public function getPassword(){
 		return $this->password;
+	}
+
+	/* Métodos Getter and Setter para atributo "photo" */
+	public function setPhoto($photo){
+		$this->photo = $photo;
+	}
+
+	public function getPhoto(){
+		return $this->photo;
 	}
 
 	/* Métodos Getter and Setter para atributo "admin" */
