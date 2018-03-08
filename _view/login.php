@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- Font Awesome -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 
     <!-- Meus estilos -->
     <link rel="stylesheet" type="text/css" href="_css/login.css">
@@ -40,13 +40,13 @@
 			<!-- Verifica a existência de erro no processo de Login -->
 			<?php if( isset($_GET["error"]) && $_GET["error"] == "LOGIN_ERROR" ){ ?>
 				<div class="alert alert-danger" role="alert">
-					<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+					<i class="fas fa-exclamation-circle" aria-hidden="true"></i>
 					<span class="sr-only">Erro:</span>
 					Usuário e/ou senha inválidos!
 				</div>
 			<?php }else if( isset($_GET["error"]) && $_GET["error"] == "LOGIN_NEEDED" ){ ?>
 				<div class="alert alert-danger" role="alert">
-					<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+					<i class="fas fa-exclamation-circle" aria-hidden="true"></i>
 					<span class="sr-only">Erro:</span>
 					Efetue o login!
 				</div>
@@ -62,7 +62,6 @@
 							<span class="input-group-addon" aria-hidden="true">@</span>
 						</div>
 					</div>
-					<span class="input-group-addon" aria-hidden="true">@</span>
 				</div>
 			</div>
 
@@ -74,34 +73,31 @@
 					<div class="input-group-append">
 						<div class="input-group-text">
 							<span class="input-group-addon">
-								<i class="fa fa-key" aria-hidden="true"></i>
+								<i class="fas fa-key" aria-hidden="true"></i>
 							</span>
 						</div>
 					</div>
-					<span class="input-group-addon">
-						<i class="fa fa-key" aria-hidden="true"></i>
-					</span>
 				</div>
 			</div>
 
 			<!-- Checkbox - Remember User -->
 			<div class="checkbox">
 				<label><input type="checkbox" name="remember"> Lembrar login e senha</label>
-				<label><input type="checkbox" name="remember">Lembrar login e senha</label>
 			</div>
+
 			<!-- Login Button -->
 			<button type="submit" class="btn btn-primary btn-block">
 				Entrar &nbsp;
-				<span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+				<i class="fas fa-sign-in-alt" aria-hidden="true"></i>
 			</button>
+			
 			<!-- Signup Button -->
 			<a class="btn btn-success btn-block" role="button" href="#">
 				Cadastrar-se &nbsp;
-				<i class="fa fa-user-plus" aria-hidden="true"></i>
+				<i class="fas fa-user-plus" aria-hidden="true"></i>
 			</a>
 		</form>
-		<!-- Remember password -->
-		<p id="forget-password"><a href="#">Esqueceu sua senha?</a></p>
+		
 		<!-- Forgot password? -->
 		<p id="forgot-password"><a href="#">Esqueceu sua senha?</a></p>
 
