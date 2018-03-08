@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	require_once("../_model/ConnectToDatabase.php");
-	require_once("../_model/UsersDAO.php");
+	require_once("../_model/UserDAO.php");
 
 
 	if( isset($_POST["email"]) && isset($_POST["password"]) ){
@@ -9,7 +9,7 @@
 		$email = strtolower( utf8_encode( htmlspecialchars($_POST["email"]) ) );
 		$password = utf8_encode( htmlspecialchars($_POST["password"]) );
 		
-		$userDao = new UsersDAO();
+		$userDao = new UserDAO();
 		$user = $userDao->searchByEmail($email);
 
 		if($user != null){

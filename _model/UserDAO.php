@@ -4,7 +4,7 @@ include_once 'UserVO.php';
 include_once 'InterfaceCrudDAO.php';
 
 
-class UsersDAO implements InterfaceCrudDAO{
+class UserDAO implements InterfaceCrudDAO{
 
  private $mysqli = null;
 
