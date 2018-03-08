@@ -57,21 +57,36 @@
 				<label for="inputEmail" class="sr-only">E-mail:</label>
 				<div class="input-group">
 					<input type="email" name="email" id="inputEmail" class="form-control" placeholder="Seu e-mail" required autofocus>
+					<div class="input-group-append">
+						<div class="input-group-text">
+							<span class="input-group-addon" aria-hidden="true">@</span>
+						</div>
+					</div>
 					<span class="input-group-addon" aria-hidden="true">@</span>
 				</div>
 			</div>
+
 			<!-- Password Field -->
 			<div class="form-group">
 				<label for="inputPassword" class="sr-only">Senha:</label>
 				<div class="input-group">
 					<input type="password" name="password" id="inputPassword" class="form-control" placeholder="Sua Senha" required>
+					<div class="input-group-append">
+						<div class="input-group-text">
+							<span class="input-group-addon">
+								<i class="fa fa-key" aria-hidden="true"></i>
+							</span>
+						</div>
+					</div>
 					<span class="input-group-addon">
 						<i class="fa fa-key" aria-hidden="true"></i>
 					</span>
 				</div>
 			</div>
+
 			<!-- Checkbox - Remember User -->
 			<div class="checkbox">
+				<label><input type="checkbox" name="remember"> Lembrar login e senha</label>
 				<label><input type="checkbox" name="remember">Lembrar login e senha</label>
 			</div>
 			<!-- Login Button -->
@@ -87,6 +102,8 @@
 		</form>
 		<!-- Remember password -->
 		<p id="forget-password"><a href="#">Esqueceu sua senha?</a></p>
+		<!-- Forgot password? -->
+		<p id="forgot-password"><a href="#">Esqueceu sua senha?</a></p>
 
 	</div><!-- /.box-login -->
 </div><!-- /.middle -->
