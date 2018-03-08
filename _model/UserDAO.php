@@ -31,7 +31,7 @@ class UserDAO implements InterfaceCrudDAO{
 	 * Método que recupera todos as entradas (linhas) da tabela.
 	 *
 	 *=====================================================================*/
-	public function listAll(){
+	public function selectAll(){
 
 		$result = $this->mysqli->query("SELECT * FROM users");
 
