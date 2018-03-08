@@ -10,7 +10,7 @@
 
 <body>
 <?php
-	echo "<h1>Seja bem-vindo ".$_SESSION["loggedUserName"]." ".$_SESSION["loggedUserLastName"]."</h1>";
+	echo "<h1>Seja bem-vindo ".$_SESSION["loggedInUserName"]." ".$_SESSION["loggedInUserLastName"]."</h1>";
 ?>
 </body>
 </html>

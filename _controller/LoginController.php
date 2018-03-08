@@ -16,10 +16,10 @@
 			$encryptedPsw = md5($password);
 
 			if( $encryptedPsw == $user->getPassword() ){
-				$_SESSION["loggedUserName"] = $user->getName();
-				$_SESSION["loggedUserLastName"] = $user->getLastName();
-				$_SESSION["loggedUserEmail"] = $user->getEmail();
-				$_SESSION["loggedUserPermission"] = $user->getAdmin();
+				$_SESSION["loggedInUserName"] = $user->getName();
+				$_SESSION["loggedInUserLastName"] = $user->getLastName();
+				$_SESSION["loggedInUserEmail"] = $user->getEmail();
+				$_SESSION["loggedInUserPermission"] = $user->getAdmin();
 
 				header('Location: ../_view/agenda.php');
 			}
