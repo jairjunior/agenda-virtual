@@ -30,18 +30,62 @@
 <!--************************  PERFIL DO USUÁRIO  ***********************-->
 <!--********************************************************************-->
 <div class="container-fluid my-top-container">
-	
-	<?php 
-		var_dump( $_SESSION["loggedInUserPhoto"] );
-	?>
+
+	<nav class="navbar navbar-expand-md navbar-light" style="background-color: #E6E6E6;">
+		<a class="navbar-brand" href="#">
+			<img src="../_images/_icons/agenda-icon3.png" width="35" height="35" alt="Ícone de agenda">
+			Agenda <span class="sr-only">(current)</span>
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  	</button>
+
+		<div class="collapse navbar-collapse" id="navbarNav">
+		    <ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="#">Contacts</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Notes</a>
+				</li>
+				<li class="nav-item dropdown">
+		        	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAddNew" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add new </a>
+		        		<div class="dropdown-menu" aria-labelledby="navbarDropdownAddNew">
+	          				<a class="dropdown-item" href="#">
+	          					<i class="fas fa-sign-address-book" aria-hidden="true"></i> &nbsp; New contact</a>
+							<a class="dropdown-item" href="#">
+								<i class="fas fa-sign-sticky-note" aria-hidden="true"></i> &nbsp; New note</a>
+	        			</div>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAccount" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdownAccount">
+		        			<a class="dropdown-item disabled" href="#"><?php echo($_SESSION["loggedInUserEmail"]) ?></a>
+		        			<div class="dropdown-divider"></div>
+	          				<a class="dropdown-item" href="#">
+	          					<i class="fas fa-sign-user-circle" aria-hidden="true"></i> &nbsp; Your profile</a>
+	          				<a class="dropdown-item" href="#">Bla bla bla</a>
+	          				<div class="dropdown-divider"></div>
+	          				<a class="dropdown-item" href="#">
+	          					<i class="fas fa-sign-wrench" aria-hidden="true"></i> &nbsp; Settings</a>
+							<a class="dropdown-item" href="#">
+								<i class="fas fa-sign-in-alt" aria-hidden="true"></i> &nbsp; Logout</a>
+	        			</div>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+
+
 
 
 	<img src="<?php echo($_SESSION["loggedInUserPhoto"]) ?>" alt="..." class="img-thumbnail">
 
-
 	<?php
 	echo "<h1>Seja bem-vindo ".$_SESSION["loggedInUserName"]." ".$_SESSION["loggedInUserLastName"]."</h1>";
 	?>
+
 </div>
 
 
