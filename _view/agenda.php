@@ -14,6 +14,9 @@
 	<!-- Bootstrap 4.0.0 CSS (compiled and minified) -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <!-- Meus estilos -->
+    <link rel="stylesheet" type="text/css" href="_css/agenda.css">
+
     <!-- Font Awesome -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 
@@ -27,23 +30,23 @@
 </head>
 <body>
 <!--********************************************************************-->
-<!--************************  PERFIL DO USUÁRIO  ***********************-->
+<!--******************  BARRA DE NAVEGAÇÃO SUPERIOR ********************-->
 <!--********************************************************************-->
-<div class="container-fluid my-top-container">
+<div class="container-fluid my-navbar-container">
 
-	<nav class="navbar navbar-expand-md navbar-light" style="background-color: #E6E6E6;">
+	<nav class="navbar navbar-expand-md my-top-navbar">
 		<a class="navbar-brand" href="#">
-			<img src="../_images/_icons/agenda-icon3.png" width="35" height="35" alt="Ícone de agenda">
-			Agenda <span class="sr-only">(current)</span>
+			<img src="../_images/_icons/agenda-icon3.png" width="35" height="35" alt="Contact Book Icon">
+			<span class="top-navbar-brand-name">&nbsp; Contact Book</span>
 		</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topNavBar" aria-controls="topNavBar" aria-expanded="false" aria-label="Toggle navigation">
+			<i class="fas fa-bars" aria-hidden="true"></i>
 	  	</button>
 
-		<div class="collapse navbar-collapse" id="navbarNav">
+		<div class="collapse navbar-collapse" id="topNavBar">
 		    <ul class="navbar-nav">
 				<li class="nav-item">
-					<a class="nav-link" href="#">Contacts</a>
+					<a class="nav-link nav-link-active" href="#">Contacts <span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#">Notes</a>
@@ -52,9 +55,9 @@
 		        	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAddNew" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add new </a>
 		        		<div class="dropdown-menu" aria-labelledby="navbarDropdownAddNew">
 	          				<a class="dropdown-item" href="#">
-	          					<i class="fas fa-sign-address-book" aria-hidden="true"></i> &nbsp; New contact</a>
+	          					<i class="fas fa-address-book" aria-hidden="true"></i> &nbsp; New contact</a>
 							<a class="dropdown-item" href="#">
-								<i class="fas fa-sign-sticky-note" aria-hidden="true"></i> &nbsp; New note</a>
+								<i class="fas fa-sticky-note" aria-hidden="true"></i> &nbsp; New note</a>
 	        			</div>
 				</li>
 				<li class="nav-item dropdown">
@@ -63,31 +66,66 @@
 		        			<a class="dropdown-item disabled" href="#"><?php echo($_SESSION["loggedInUserEmail"]) ?></a>
 		        			<div class="dropdown-divider"></div>
 	          				<a class="dropdown-item" href="#">
-	          					<i class="fas fa-sign-user-circle" aria-hidden="true"></i> &nbsp; Your profile</a>
-	          				<a class="dropdown-item" href="#">Bla bla bla</a>
+	          					<i class="fas fa-user-circle" aria-hidden="true"></i> &nbsp; Your profile</a>
+	          				<a class="dropdown-item" href="#">
+	          					<i class="fas fa-download" aria-hidden="true"></i> &nbsp; Download Contacts</a>
 	          				<div class="dropdown-divider"></div>
 	          				<a class="dropdown-item" href="#">
-	          					<i class="fas fa-sign-wrench" aria-hidden="true"></i> &nbsp; Settings</a>
+	          					<i class="fas fa-wrench" aria-hidden="true"></i> &nbsp; Settings</a>
 							<a class="dropdown-item" href="#">
-								<i class="fas fa-sign-in-alt" aria-hidden="true"></i> &nbsp; Logout</a>
+								<i class="fas fa-sign-out-alt" aria-hidden="true"></i> &nbsp; Logout</a>
 	        			</div>
 				</li>
 			</ul>
 		</div>
 	</nav>
-
-
-
-
-
-	<img src="<?php echo($_SESSION["loggedInUserPhoto"]) ?>" alt="..." class="img-thumbnail">
-
-	<?php
-	echo "<h1>Seja bem-vindo ".$_SESSION["loggedInUserName"]." ".$_SESSION["loggedInUserLastName"]."</h1>";
-	?>
-
 </div>
 
+<!--********************************************************************-->
+<!--************  CONTAINER PARA INFORMAÇÕES DO USUÁRIO ****************-->
+<!--********************************************************************-->
+<div class="container-fluid user-profile-wrapper">
+	<div class="user-profile-box">
+		
+		<div class="user-profile-img-box">	
+			<img src="<?php echo($_SESSION["loggedInUserPhoto"]) ?>" alt="..." class="user-profile-img">
+		</div>
+		
+		<div class="user-profile-info-box">
+			<div class="user-profile-name">
+				<?php echo "<h3>".$_SESSION["loggedInUserName"]." ".$_SESSION["loggedInUserLastName"]."</h3>"; ?>
+			</div>
+			<div class="hline"></div>
+			<div class="user-profile-info">
+				<?php echo "<p>".$_SESSION["loggedInUserEmail"]."</p>"; ?>
+				<p>125 Contatos</p>
+				<p>12 notas</p>
+				<p>Usuário desde 20XX.</p>
+				<p>Usuário desde 20XX.</p>
+				<p>Usuário desde 20XX.</p>
+				<p>Usuário desde 20XX.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--********************************************************************-->
+<!--*****************  CORPO PRINCIPAL DA PÁGINA ***********************-->
+<!--********************************************************************-->
+<div class="container-fluid my-main-container">
+	<div class="row">
+		<div class="col-xl-3 col-lg-3 col-md-3 col-sm-4">
+				<h2>Contatos!</h2>
+		</div>
+		<div class="col-xl-3 col-lg-6 col-md-6 col-sm-4">
+				<h2>Informações dos Contatos</h2>
+		</div>
+		<div class="col-xl-3 col-lg-3 col-md-3 col-sm-4">
+				<h2>Letras</h2>
+		</div>
+	</div>
+	
+</div>
 
 
 
