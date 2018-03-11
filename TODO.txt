@@ -1,0 +1,1 @@
+1) Iniciar formatação do corpo principal da página. Mostrar nome dos contatos à esquerda e informação do contato selecionado no centro da página. Na lateral direita ficará um índice por letras em ordem alfabética. Ao clicar numa letra, levará ao primeiro contato daquela letra.
