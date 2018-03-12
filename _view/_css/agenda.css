@@ -4,7 +4,7 @@
 .my-top-navbar{
 	background-color: #21610B;
 }
-a.navbar-brand img, .top-navbar-brand-name {
+a.navbar-brand img {
 	display: inline-block;
 }
 .top-navbar-brand-name{
@@ -23,8 +23,8 @@ a.navbar-brand img, .top-navbar-brand-name {
 }
 .navbar-toggler{
 	border: 1px solid;
-	border-radius: 6px;
 	color: white;
+	border-radius: 6px;
 }
 .my-top-navbar .nav-item a{
 	font-size: 1.0em;
@@ -33,7 +33,7 @@ a.navbar-brand img, .top-navbar-brand-name {
 .my-top-navbar .nav-item a:hover{
 	color: white;
 }
-.my-top-navbar a.nav-link-active{
+.my-top-navbar .nav-item a.nav-link-active{
 	color: white;
 	font-weight: bold;
 }
@@ -43,6 +43,23 @@ a.navbar-brand img, .top-navbar-brand-name {
 .my-top-navbar .dropdown-menu a{
 	color: white;
 }
+.my-top-navbar .dropdown-menu a.disable{
+	color: #EAEAEA;
+}
+.my-top-navbar .dropdown-menu a:hover{
+	color: #2A7815;
+	background-color: white;
+}
+.my-top-navbar .dropdown-menu a:active{
+	background-color: #21610B;
+	color: white;
+}
+.my-top-navbar .dropdown-menu .disable:hover{
+	background-color: #2A7815;
+	color: #EAEAEA;
+}
+
+
 
 
 
@@ -60,17 +77,15 @@ a.navbar-brand img, .top-navbar-brand-name {
 }
 @media (min-width: 576px){
 	.user-profile-box{
-		max-width: 700px;
-	}	
-}
-.user-profile-img-box{
-	display: inline-block;
-	margin-right: 50px;
-	margin-top: auto;
-	margin-bottom: auto;
-}
-.user-profile-info-box{
-	display: inline-block;
+		max-width: 750px;
+	}
+	.user-profile-img-box{
+		display: inline-block;
+		margin-right: 50px;
+	}
+	.user-profile-info-box{
+		display: inline-block;
+	}
 }
 .hline {
 	width: 100%;
@@ -89,10 +104,7 @@ a.navbar-brand img, .top-navbar-brand-name {
     margin-right: auto;
 	border-radius: 170px;
 }
-@media (max-width: 575px){
-	.my-top-navbar-brand{
-		display:block;	
-	}	
+@media (max-width: 575px){	
 	.user-profile-box{
 		display: block;
 	}
@@ -103,6 +115,8 @@ a.navbar-brand img, .top-navbar-brand-name {
 	}
 	.user-profile-info-box{
 		display: block;
-		text-align: center;
-	}	
+	}
+	.user-profile-info {
+		text-align: left;
+	}
 }

@@ -63,7 +63,7 @@
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAccount" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdownAccount">
-		        			<a class="dropdown-item disabled" href="#"><?php echo($_SESSION["loggedInUserEmail"]) ?></a>
+		        			<a class="dropdown-item disable" href="#"><?php echo($_SESSION["loggedInUserEmail"]) ?></a>
 		        			<div class="dropdown-divider"></div>
 	          				<a class="dropdown-item" href="#">
 	          					<i class="fas fa-user-circle" aria-hidden="true"></i> &nbsp; Your profile</a>
@@ -82,7 +82,7 @@
 </div>
 
 <!--********************************************************************-->
-<!--************  CONTAINER PARA INFORMAÇÕES DO USUÁRIO ****************-->
+<!--*****************  BOX COM INFORMAÇÕES DO USUÁRIO  *****************-->
 <!--********************************************************************-->
 <div class="container-fluid user-profile-wrapper">
 	<div class="user-profile-box">
@@ -97,13 +97,12 @@
 			</div>
 			<div class="hline"></div>
 			<div class="user-profile-info">
-				<?php echo "<p>".$_SESSION["loggedInUserEmail"]."</p>"; ?>
-				<p>125 Contatos</p>
-				<p>12 notas</p>
-				<p>Usuário desde 20XX.</p>
-				<p>Usuário desde 20XX.</p>
-				<p>Usuário desde 20XX.</p>
-				<p>Usuário desde 20XX.</p>
+				<p><i class="fas fa-at" aria-hidden="true"></i> &nbsp; <?php echo $_SESSION["loggedInUserEmail"]; ?></p>
+				<p><i class="fas fa-map-marker" aria-hidden="true"></i> &nbsp; Brasília - DF</p>
+				<p><i class="fas fa-briefcase" aria-hidden="true"></i> &nbsp; Superior Tribunal de Justiça</p>
+				<p><i class="fas fa-users" aria-hidden="true"></i> &nbsp; 125 Contatos</p>
+				<p><i class="fas fa-sticky-note" aria-hidden="true"></i> &nbsp; 12 notas</p>
+				<p><i class="fas fa-calendar-alt" aria-hidden="true"></i> &nbsp; Usuário desde 20XX.</p>
 			</div>
 		</div>
 	</div>
