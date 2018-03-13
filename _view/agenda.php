@@ -88,15 +88,39 @@
 </div>
 
 <!--********************************************************************-->
-<!--*****************  BOX COM INFORMAÇÕES DO USUÁRIO  *****************-->
+<!--**********************  INFORMAÇÕES DO USUÁRIO  ********************-->
 <!--********************************************************************-->
 <div class="container-fluid user-profile-wrapper">
+
+	<!-- Barra com nome do usuário que aparece quando o perfil está escondido -->
+	<div class="container-fluid display-none" id="hiddenProfileBar">
+	<div class="row">
+		<div class="col-11 padding-0">
+			<h4 id="userProfileBoxName">
+				<?php echo $_SESSION["loggedInUserName"]." ".$_SESSION["loggedInUserLastName"]; ?>
+			</h4>
+		</div>
+		<div class="col-1 padding-0" id="buttonColumn">
+			<div id="showButtonTable">
+			<div id="showButtonCell">
+				<button type="button" class="btn btn-info btn-sm" id="showUserProfileBut" title="Show user profile">
+					<i class="fas fa-angle-down" aria-hidden="true"></i>
+				</button>
+			</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<!-- Caixa centralizada com perfil do usuário que pode ser escondida-->
 	<div class="user-profile-box">
-		
+
+		<!-- Foto do usuário -->
 		<div class="user-profile-img-box">	
 			<img src="<?php echo($_SESSION["loggedInUserPhoto"]) ?>" alt="..." class="user-profile-img">
 		</div>
 		
+		<!-- Informações do usuário -->
 		<div class="user-profile-info-box">
 			<div class="user-profile-name">
 				<?php echo "<h3>".$_SESSION["loggedInUserName"]." ".$_SESSION["loggedInUserLastName"]."</h3>"; ?>
@@ -111,6 +135,10 @@
 				<p><i class="fas fa-calendar-alt" aria-hidden="true"></i> &nbsp; Usuário desde 20XX.</p>
 			</div>
 		</div>
+	</div>
+	<button type="button" class="btn btn-info btn-sm" id="hideUserProfileBut" title="Hide user profile">
+		<i class="fas fa-angle-up" aria-hidden="true"></i>
+	</button>
 	</div>
 </div>
 

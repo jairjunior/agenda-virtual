@@ -65,15 +65,55 @@ a.navbar-brand img {
 
 .user-profile-wrapper{
 	background-color: #E0F8E0;
-	padding-top: 40px;
-	padding-bottom: 40px;
+	padding: 0px 20px;
+	overflow: hidden;
+}
+.display-none{
+	display: none;
+}
+.padding-0{
+	padding: 0px;
+}
+#hiddenProfileBar{
+	margin: 0px;
+	padding: 0px;
+}
+#userProfileBoxName{
+	margin: 5px 0px 8px 0px;
+	padding: 0px 10px;
+}
+#showButtonTable {
+    display: table;
+}
+#showButtonCell {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
 }
 .user-profile-box{
 	display: flex;
     margin-left: auto;
     margin-right: auto;
 	padding: 20px 30px;
+	margin-top: 30px;
 	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+.user-profile-img{
+	display: block;
+	max-width: 200px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+	border-radius: 170px;
+}
+.hline {
+	width: 100%;
+	height: 1px;
+	margin: 10px 0px;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+.user-profile-info-box p{
+	margin-bottom: 3px;
 }
 @media (min-width: 576px){
 	.user-profile-box{
@@ -86,23 +126,6 @@ a.navbar-brand img {
 	.user-profile-info-box{
 		display: inline-block;
 	}
-}
-.hline {
-	width: 100%;
-	height: 1px;
-	margin: 10px 0px;
-	background-color: rgba(0, 0, 0, 0.2);
-}
-.user-profile-info-box p{
-	margin-bottom: 3px;
-}
-.user-profile-img{
-	display: block;
-	max-width: 200px;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-	border-radius: 170px;
 }
 @media (max-width: 575px){	
 	.user-profile-box{
@@ -119,4 +142,16 @@ a.navbar-brand img {
 	.user-profile-info {
 		text-align: left;
 	}
+}
+#hideUserProfileBut, #showUserProfileBut {
+	background-color: rgba(23, 162, 184, 0.1);
+	border-color: rgba(23, 162, 184, 0.1);
+}
+#hideUserProfileBut:hover, #showUserProfileBut:hover {
+	background-color: rgba(23, 162, 184, 0.4);
+	border-color: rgba(23, 162, 184, 0.1);
+}
+#hideUserProfileBut {
+	margin: 7px 0px 6px;
+	float: right;
 }
